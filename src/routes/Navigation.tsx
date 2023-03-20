@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, NavLink, Navigate } from 'react-router-do
 import { routes } from './routes';
 import logo from '../logo.svg';
 
-
 export const Navigation = () => {
     return (
         <Suspense fallback={<span>Loading...</span>}>
@@ -23,11 +22,9 @@ export const Navigation = () => {
                     </nav>
 
                     <Routes>
-
                         {routes.map(({ path, Component, to }) => (
                             <Route path={path} element={<Component />} key={to} />
                         ))}
-
                         <Route path='/*' element={<Navigate to={routes[0].to} replace />} />
                     </Routes>
 
